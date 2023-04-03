@@ -19,3 +19,9 @@ npm install
 ```
 npm run start:dev
 ```
+
+## Addresses :
+
+- Nest : http://localhost:3000
+- Playground : http://localhost:3000/graphql
+- MongoExpress : http://localhost:8081
