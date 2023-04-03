@@ -7,28 +7,28 @@ import { UpdatePostInput } from './dto/update-post.input';
 export class PostResolver {
   constructor(private readonly postService: PostService) {}
 
-  @Mutation('createPost')
+  @Mutation(() => String, { name: 'createPost' })
   create(@Args('createPostInput') createPostInput: CreatePostInput) {
     return this.postService.create(createPostInput);
   }
 
-  @Query('post')
+  @Query(() => [String], { name: 'posts' })
   findAll() {
     return this.postService.findAll();
   }
 
-  @Query('post')
-  findOne(@Args('id') id: number) {
+  @Query(() => String, { name: 'post' })
+  findOne(@Args('id') id: string) {
     return this.postService.findOne(id);
   }
 
-  @Mutation('updatePost')
-  update(@Args('updatePostInput') updatePostInput: UpdatePostInput) {
-    return this.postService.update(updatePostInput.id, updatePostInput);
+  @Mutation(() => String, { name: 'updatePost' })
+  update(@Args('_id') _id: string, @Args('updatePostInput') updatePostInput: UpdatePostInput) {
+    return this.postService.update(_id, updatePostInput);
   }
 
-  @Mutation('removePost')
-  remove(@Args('id') id: number) {
+  @Mutation(() => String, { name: 'removePost' })
+  remove(@Args('id') id: string) {
     return this.postService.remove(id);
   }
 }

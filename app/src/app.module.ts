@@ -16,7 +16,7 @@ import { PostModule } from './post/post.module';
       autoTransformHttpErrors: true,
     }),
     UserModule,
-    // PostModule
+    PostModule
   ],
 })
 export class AppModule {}

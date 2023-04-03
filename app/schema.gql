@@ -2,6 +2,11 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreatePostInput {
+  content: String!
+  title: String!
+}
+
 input CreateUserInput {
   age: Float!
   firstName: String!
@@ -9,13 +14,22 @@ input CreateUserInput {
 }
 
 type Mutation {
+  createPost(createPostInput: CreatePostInput!): String!
   createUser(input: CreateUserInput!): User!
+  removePost(id: String!): String!
+  updatePost(_id: String!, updatePostInput: UpdatePostInput!): String!
   updateUser(_id: String!, input: CreateUserInput!): User!
 }
 
 type Query {
   findUser(_id: String!): User!
   findUsers: [User!]!
+  post(id: String!): String!
+  posts: [String!]!
+}
+
+input UpdatePostInput {
+  _id: String!
 }
 
 type User {
