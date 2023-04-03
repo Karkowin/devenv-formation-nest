@@ -1,0 +1,14 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  findUser: User!
+}
+
+type User {
+  age: Float!
+  firstName: String!
+  id: String!
+  lastName: String!
+}
