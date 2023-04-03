@@ -3,12 +3,14 @@
 # ------------------------------------------------------
 
 type Query {
-  findUser: User!
+  createUser: User!
+  findOneUser: User!
+  findUsers: [User!]!
 }
 
 type User {
+  _id: String!
   age: Float!
   firstName: String!
-  id: String!
   lastName: String!
 }

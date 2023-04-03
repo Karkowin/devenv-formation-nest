@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { AppResolver } from './app.resolver';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -16,11 +14,7 @@ import { AppResolver } from './app.resolver';
       sortSchema: true,
       autoTransformHttpErrors: true,
     }),
-  ],
-  controllers: [AppController],
-  providers: [
-    AppService,
-    AppResolver
+    UserModule
   ],
 })
 export class AppModule {}
