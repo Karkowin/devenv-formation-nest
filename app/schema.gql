@@ -10,9 +10,11 @@ input CreateUserInput {
 
 type Mutation {
   createUser(input: CreateUserInput!): User!
+  updateUser(_id: String!, input: CreateUserInput!): User!
 }
 
 type Query {
+  findUser(_id: String!): User!
   findUsers: [User!]!
 }
 
@@ -20,5 +22,6 @@ type User {
   _id: String!
   age: Float!
   firstName: String!
+  fullName: String!
   lastName: String!
 }

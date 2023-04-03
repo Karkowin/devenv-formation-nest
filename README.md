@@ -49,3 +49,24 @@ mutation users {
   }) {_id}
 }
 ```
+<br />
+
+Find a user full name :
+```
+query findUser {
+  findUser(_id: "642acfb65da3b7b930ae121d") {
+    fullName
+  }
+}
+```
+<br />
+
+Update a user :
+```
+mutation updateUser {
+  updateUser(
+    _id: "642acfb65da3b7b930ae121d"
+    input: { age: 30, firstName: "Mike", lastName: "Smith" }
+  ){_id, fullName}
+}
+```

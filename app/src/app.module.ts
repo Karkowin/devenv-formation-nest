@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { UserModule } from './user/user.module';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { UserModule } from './user/user.module';
       sortSchema: true,
       autoTransformHttpErrors: true,
     }),
-    UserModule
+    UserModule,
+    // PostModule
   ],
 })
 export class AppModule {}

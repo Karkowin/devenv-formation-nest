@@ -22,8 +22,8 @@ export class UserService {
         return await this.userModel.create(input);
     }
 
-    async update(input : User) {
-        return await this.userModel.findOneAndUpdate({ _id: input._id }, input, { returnOriginal: false });
+    async update(_id : string, input : CreateUserInput) {
+        return await this.userModel.findOneAndUpdate({ _id: _id }, input, { returnOriginal: false });
     }
 
     async delete(id: string) {
